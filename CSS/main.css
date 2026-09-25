@@ -853,3 +853,44 @@ h1 {
     }
 
 }
+/* =====================================================
+   MESSAGE PAGE
+===================================================== */
+
+.message-image {
+    width: min(420px, 85vw);
+
+    margin: 25px auto;
+}
+
+
+.message-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(170, 110, 135, 0.12);
+}
+
+
+.message-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.message-buttons .cute-button {
+    margin: 0;
+}
