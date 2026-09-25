@@ -81,6 +81,8 @@ let enteredPassword = "";
 
 function addPasswordNumber(number) {
 
+    // لا يسمح بأكثر من 3 أرقام
+
     if (enteredPassword.length >= 3) {
         return;
     }
@@ -92,6 +94,7 @@ function addPasswordNumber(number) {
     updatePasswordDisplay();
 
 
+    // عندما تكتمل 3 أرقام
     if (enteredPassword.length === 3) {
 
         setTimeout(() => {
@@ -164,6 +167,66 @@ function clearPassword() {
     enteredPassword = "";
 
     updatePasswordDisplay();
+
+}
+
+
+/* =====================================================
+   ERROR POPUP
+===================================================== */
+
+const errorOverlay =
+    document.getElementById("errorOverlay");
+
+const tryAgainButton =
+    document.getElementById("tryAgainButton");
+
+
+/* =====================================================
+   SHOW ERROR POPUP
+===================================================== */
+
+function showErrorPopup() {
+
+    if (errorOverlay) {
+
+        errorOverlay.style.display = "flex";
+
+    }
+
+}
+
+
+/* =====================================================
+   TRY AGAIN
+===================================================== */
+
+function closeErrorPopup() {
+
+    if (errorOverlay) {
+
+        errorOverlay.style.display = "none";
+
+    }
+
+
+    // تصفير الرقم حتى تقدر تدخل كلمة المرور من جديد
+
+    clearPassword();
+
+}
+
+
+/* =====================================================
+   TRY AGAIN BUTTON
+===================================================== */
+
+if (tryAgainButton) {
+
+    tryAgainButton.addEventListener(
+        "click",
+        closeErrorPopup
+    );
 
 }
 
