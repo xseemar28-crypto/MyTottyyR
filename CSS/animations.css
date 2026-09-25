@@ -1,0 +1,178 @@
+/* =====================================================
+   GENERAL ANIMATIONS
+===================================================== */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.page.active-page {
+    animation: pageFade 0.45s ease;
+}
+
+
+/* =====================================================
+   NUMBER BUTTON
+===================================================== */
+
+@keyframes numberPress {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.88);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.number-button.number-click-animation {
+    animation: numberPress 0.18s ease;
+}
+
+
+/* =====================================================
+   ERROR POPUP
+===================================================== */
+
+.popup-overlay {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.error-popup {
+    transform: scale(0.92);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.popup-overlay.show .error-popup {
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+@keyframes envelopeOpen {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+.envelope-animation-trigger {
+    animation: envelopeOpen 0.45s ease;
+}
+
+
+/* =====================================================
+   CHOICES
+===================================================== */
+
+@keyframes choiceAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+.envelope-choice {
+    animation: choiceAppear 0.6s ease both;
+}
+
+
+.envelope-choice-left {
+    animation-delay: 0.05s;
+}
+
+
+.envelope-choice-center {
+    animation-delay: 0.15s;
+}
+
+
+.envelope-choice-right {
+    animation-delay: 0.25s;
+}
+
+
+/* =====================================================
+   SONG PLAYING
+===================================================== */
+
+@keyframes songPlaying {
+
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.04);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+}
+
+
+.song-main-image.playing {
+    animation: songPlaying 1.2s ease-in-out infinite;
+}
