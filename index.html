@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/colors.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/decorations.css">
+    <link rel="stylesheet" href="CSS/animations.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     DECORATIONS
+===================================================== -->
+
+<div class="decorations">
+
+    <span class="decoration decoration-1">𐙚</span>
+    <span class="decoration decoration-2">✦</span>
+    <span class="decoration decoration-3">ꕤ</span>
+    <span class="decoration decoration-4">𐙚</span>
+    <span class="decoration decoration-5">ꕤ</span>
+    <span class="decoration decoration-6">𖤐</span>
+    <span class="decoration decoration-7">♡︎</span>
+    <span class="decoration decoration-8">𖤐</span>
+    <span class="decoration decoration-9">ᐢ..ᐢ</span>
+    <span class="decoration decoration-10">⸱៰ ࣭⸰</span>
+    <span class="decoration decoration-11">⸱៰ ࣭⸰</span>
+    <span class="decoration decoration-12">♡︎</span>
+    <span class="decoration decoration-13">˖ ࣪ ✦ ꒷</span>
+    <span class="decoration decoration-14">ꕤ</span>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 1 — PASSWORD
+===================================================== -->
+
+<main id="passwordPage" class="page active-page">
+
+    <div class="page-content password-content">
+
+        <p class="small-top-text">
+            A little surprise awaits you 𐙚
+        </p>
+
+        <h1>
+            Birthday Surprise
+        </h1>
+
+        <p class="arabic-text">
+            أدخلي الرقم السري
+        </p>
+
+        <p class="hint-title">
+            𐙚 Hint: I love you
+        </p>
+
+
+        <!-- Password dots -->
+
+        <div id="passwordDisplay" class="password-display">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- Number pad -->
+
+        <div class="number-pad">
+
+            <button class="number-button" data-number="1">1</button>
+            <button class="number-button" data-number="2">2</button>
+            <button class="number-button" data-number="3">3</button>
+
+            <button class="number-button" data-number="4">4</button>
+            <button class="number-button" data-number="5">5</button>
+            <button class="number-button" data-number="6">6</button>
+
+            <button class="number-button" data-number="7">7</button>
+            <button class="number-button" data-number="8">8</button>
+            <button class="number-button" data-number="9">9</button>
+
+            <button class="number-button" data-number="*">*</button>
+            <button class="number-button" data-number="0">0</button>
+            <button class="number-button" data-number="#">#</button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     WRONG PASSWORD POPUP
+===================================================== -->
+
+<div id="errorOverlay" class="popup-overlay">
+
+    <div class="error-popup">
+
+        <button id="closeErrorButton" class="close-popup">
+            ×
+        </button>
+
+        <h2>
+            Error
+        </h2>
+
+        <img
+            src="images/error-image.png"
+            alt="Error"
+            class="error-image"
+        >
+
+        <p>
+            You entered the wrong password
+        </p>
+
+        <div class="popup-line"></div>
+
+        <img
+            src="images/hint-image.png"
+            alt="Try again"
+            class="error-second-image"
+        >
+
+        <div class="popup-line"></div>
+
+        <button id="tryAgainButton" class="cute-button">
+            Try again
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE 2 — CLOSED ENVELOPE
+===================================================== -->
+
+<main id="envelopePage" class="page">
+
+    <div class="page-content">
+
+        <h2 class="section-title">
+            Something is waiting for you
+        </h2>
+
+        <p class="section-description">
+            Open the envelope to see what's inside 𐙚
+        </p>
+
+
+        <button id="envelopeButton" class="envelope-button">
+
+            <img
+                src="images/envelope.png"
+                alt="Closed envelope"
+            >
+
+        </button>
+
+
+        <p class="envelope-hint">
+            Click to open the envelope
+        </p>
+
+
+        <button
+            class="cute-button back-button"
+            data-page="passwordPage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     PAGE 3 — OPENED ENVELOPE
+===================================================== -->
+
+<main id="openedEnvelopePage" class="page">
+
+    <div class="page-content">
+
+        <h2 class="section-title">
+            A little surprise for you
+        </h2>
+
+        <p class="section-description">
+            Choose one and discover your surprise 𐙚
+        </p>
+
+
+        <div class="envelope-scene">
+
+            <!-- Back of envelope -->
+
+            <img
+                src="images/envelope-back.png"
+                alt="Envelope back"
+                class="envelope-back"
+            >
+
+
+            <!-- Three choices -->
+
+            <div class="envelope-choices">
+
+
+                <!-- Flower -->
+
+                <button
+                    id="flowerChoice"
+                    class="envelope-choice envelope-choice-left"
+                >
+
+                    <img
+                        src="images/flower.png"
+                        alt="Flowers and memories"
+                    >
+
+                </button>
+
+
+                <!-- Letter -->
+
+                <button
+                    id="letterChoice"
+                    class="envelope-choice envelope-choice-center"
+                >
+
+                    <img
+                        src="images/letter.png"
+                        alt="Letter"
+                    >
+
+                </button>
+
+
+                <!-- Song -->
+
+                <button
+                    id="songChoice"
+                    class="envelope-choice envelope-choice-right"
+                >
+
+                    <img
+                        src="images/song-image.png"
+                        alt="Favorite song"
+                    >
+
+                </button>
+
+            </div>
+
+
+            <!-- Front of envelope -->
+
+            <img
+                src="images/envelope-front.png"
+                alt="Envelope front"
+                class="envelope-front"
+            >
+
+        </div>
+
+
+        <button
+            class="cute-button back-button opened-back-button"
+            data-page="envelopePage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     PAGE 4 — LETTER
+===================================================== -->
+
+<main id="letterPage" class="page">
+
+    <div class="page-content">
+
+        <h2 class="section-title">
+            A little letter for you
+        </h2>
+
+        <p class="section-description">
+            Something special just for you 𐙚
+        </p>
+
+
+        <div class="letter-image">
+
+            <img
+                src="images/letter.png"
+                alt="Birthday letter"
+            >
+
+        </div>
+
+
+        <button
+            class="cute-button back-button"
+            data-page="openedEnvelopePage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     PAGE 5 — FLOWERS + MEMORIES
+===================================================== -->
+
+<main id="flowerPage" class="page">
+
+    <div class="page-content">
+
+        <h2 class="section-title">
+            Something pretty for you
+        </h2>
+
+        <p class="section-description">
+            A little bouquet just for you 𐙚
+        </p>
+
+
+        <div class="flower-memory-layout">
+
+
+            <!-- LEFT PHOTO STRIP -->
+
+            <div class="photo-strip strip-left">
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-1-1.png"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-1-2.png"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-1-3.png"
+                        alt="Memory"
+                    </div>
+
+            </div>
+
+
+            <!-- FLOWER BOUQUET -->
+
+            <div class="bouquet-image">
+
+                <img
+                    src="images/bouquet.png"
+                    alt="Flower bouquet"
+                >
+
+            </div>
+
+
+            <!-- RIGHT PHOTO STRIP -->
+
+            <div class="photo-strip strip-right">
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-2-1.png"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-2-2.png"
+                        alt="Memory"
+                    >
+                </div>
+
+                <div class="strip-photo">
+                    <img
+                        src="images/photo-strip-2-3.png"
+                        alt="Memory"
+                    >
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="small-intro">
+            Little moments, kept forever
+        </p>
+
+
+        <button
+            class="cute-button back-button"
+            data-page="openedEnvelopePage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     PAGE 6 — SONG
+===================================================== -->
+
+<main id="songPage" class="page">
+
+    <div class="page-content">
+
+        <h2 class="section-title">
+            Your favorite song
+        </h2>
+
+        <p class="section-description">
+            Double click the picture to play it
+        </p>
+
+
+        <div id="songArea" class="song-area">
+
+            <div class="song-main-image">
+
+                <img
+                    src="images/song-image.png"
+                    alt="Favorite song"
+                >
+
+            </div>
+
+
+            <div class="song-small-image song-small-one">
+
+                <img
+                    src="images/song-small-1.png"
+                    alt="Song decoration"
+                >
+
+            </div>
+
+
+            <div class="song-small-image song-small-two">
+
+                <img
+                    src="images/song-small-2.png"
+                    alt="Song decoration"
+                >
+
+            </div>
+
+        </div>
+
+
+        <audio id="birthdaySong" preload="auto">
+
+            <source
+                src="music/favorite-song.mp3"
+                type="audio/mpeg"
+            >
+
+        </audio>
+
+
+        <p id="songStatus" class="song-status">
+            Double click to play
+        </p>
+
+
+        <button
+            class="cute-button back-button"
+            data-page="openedEnvelopePage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     PAGE 7 — FINAL
+===================================================== -->
+
+<main id="finalPage" class="page">
+
+    <div class="page-content final-content">
+
+
+        <h1 class="birthday-title">
+            Happy Birthday
+        </h1>
+
+
+        <p class="birthday-message">
+            I hope this little surprise made you smile
+        </p>
+
+
+        <!-- Main image -->
+
+        <div class="final-main-image">
+
+            <img
+                src="images/final-image.png"
+                alt="Birthday"
+            >
+
+        </div>
+
+
+        <!-- Small images -->
+
+        <div class="final-small-image final-small-one">
+
+            <img
+                src="images/final-small-1.png"
+                alt="Decoration"
+            >
+
+        </div>
+
+
+        <div class="final-small-image final-small-two">
+
+            <img
+                src="images/final-small-2.png"
+                alt="Decoration"
+            >
+
+        </div>
+
+
+        <p class="love-message">
+            With lots of love
+        </p>
+
+
+        <p class="signature">
+            Your Tottyy Seemar
+        </p>
+
+
+        <button
+            class="cute-button back-button"
+            data-page="envelopePage"
+        >
+            Go Back
+        </button>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="JavaScript/main.js"></script>
+<script src="JavaScript/buttons.js"></script>
+<script src="JavaScript/animations.js"></script>
+
+</body>
+</html>
