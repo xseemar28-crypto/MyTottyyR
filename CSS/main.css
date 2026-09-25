@@ -1,0 +1,855 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+    background: var(--pink-lightest);
+    color: var(--text-main);
+    font-family: "Quicksand", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PAGES
+===================================================== */
+
+.page {
+    display: none;
+
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 45px 20px;
+
+    position: relative;
+}
+
+
+.page.active-page {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.page-content {
+    width: 100%;
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+h1,
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+}
+
+
+h1 {
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
+}
+
+
+.section-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+}
+
+
+.section-description {
+    margin-top: 8px;
+
+    font-size: 0.95rem;
+
+    color: var(--text-soft);
+}
+
+
+.small-top-text {
+    margin-bottom: 5px;
+
+    font-size: 0.9rem;
+
+    color: var(--text-soft);
+}
+
+
+.arabic-text {
+    margin-top: 5px;
+
+    font-family: "Amiri", serif;
+
+    font-size: 1rem;
+}
+
+
+.hint-title {
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.15rem;
+
+    color: var(--pink-dark);
+}
+
+
+.small-intro {
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+
+    color: var(--text-soft);
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.password-content {
+    max-width: 500px;
+}
+
+
+.password-display {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 25px 0;
+}
+
+
+.password-display span {
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #ead5df;
+
+    transition: 0.2s ease;
+}
+
+
+.password-display span.filled {
+    background: var(--pink-dark);
+
+    transform: scale(1.15);
+}
+
+
+.number-pad {
+    width: min(330px, 90vw);
+
+    margin: 25px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.number-button {
+    width: 72px;
+    height: 72px;
+
+    margin: auto;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    color: var(--text-main);
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(180, 120, 145, 0.12);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.number-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.number-button:active {
+    transform: scale(0.91);
+}
+
+
+/* =====================================================
+   GENERAL BUTTON
+===================================================== */
+
+.cute-button {
+    display: block;
+
+    margin: 28px auto 0;
+
+    padding: 10px 24px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: var(--button-pink);
+
+    color: white;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(180, 110, 140, 0.15);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.cute-button:hover {
+    background: var(--button-pink-dark);
+
+    transform: translateY(-2px);
+}
+
+
+.cute-button:active {
+    transform: scale(0.95);
+}
+
+
+/* =====================================================
+   CLOSED ENVELOPE
+===================================================== */
+
+.envelope-button {
+    display: block;
+
+    width: min(360px, 82vw);
+
+    margin: 30px auto 0;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.envelope-button img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.envelope-hint {
+    margin-top: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.1rem;
+
+    color: var(--text-soft);
+}
+
+
+/* =====================================================
+   OPENED ENVELOPE
+===================================================== */
+
+.envelope-scene {
+    position: relative;
+
+    width: min(450px, 94vw);
+    height: 390px;
+
+    margin: 25px auto 0;
+
+    overflow: visible;
+}
+
+
+.envelope-back {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+.envelope-choices {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+}
+
+
+.envelope-choice {
+    position: absolute;
+
+    display: block;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    overflow: visible;
+}
+
+
+.envelope-choice img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.envelope-choice-left {
+    width: 110px;
+    height: 150px;
+
+    left: 6%;
+    bottom: 120px;
+
+    transform: rotate(-10deg);
+}
+
+
+.envelope-choice-center {
+    width: 120px;
+    height: 165px;
+
+    left: 50%;
+    bottom: 145px;
+
+    transform: translateX(-50%);
+
+    z-index: 3;
+}
+
+
+.envelope-choice-right {
+    width: 110px;
+    height: 150px;
+
+    right: 6%;
+    bottom: 120px;
+
+    transform: rotate(10deg);
+}
+
+
+.envelope-front {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+.envelope-choice:hover {
+    filter: brightness(1.03);
+}
+
+
+.envelope-choice-left:hover {
+    transform: rotate(-10deg) translateY(-7px);
+}
+
+
+.envelope-choice-center:hover {
+    transform: translateX(-50%) translateY(-7px);
+}
+
+
+.envelope-choice-right:hover {
+    transform: rotate(10deg) translateY(-7px);
+}
+
+
+.opened-back-button {
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   LETTER PAGE
+===================================================== */
+
+.letter-image {
+    width: min(500px, 90vw);
+
+    margin: 28px auto;
+}
+
+
+.letter-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(170, 110, 135, 0.12);
+}
+
+
+/* =====================================================
+   FLOWER PAGE
+===================================================== */
+
+.flower-memory-layout {
+    width: min(650px, 96vw);
+
+    margin: 30px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+}
+
+
+.bouquet-image {
+    width: 230px;
+
+    flex-shrink: 0;
+}
+
+
+.bouquet-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.photo-strip {
+    width: 100px;
+
+    flex-shrink: 0;
+}
+
+
+.strip-left {
+    transform: rotate(-4deg);
+}
+
+
+.strip-right {
+    transform: rotate(4deg);
+}
+
+
+.strip-photo {
+    width: 100%;
+
+    margin-bottom: 8px;
+
+    padding: 5px;
+
+    background: var(--pink-soft);
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 4px 12px rgba(150, 100, 120, 0.13);
+}
+
+
+.strip-photo img {
+    display: block;
+
+    width: 100%;
+    height: 82px;
+
+    object-fit: cover;
+
+    background: white;
+}
+
+
+/* =====================================================
+   SONG PAGE
+===================================================== */
+
+.song-area {
+    position: relative;
+
+    width: min(430px, 90vw);
+    height: 350px;
+
+    margin: 25px auto;
+
+    cursor: pointer;
+}
+
+
+.song-main-image {
+    position: absolute;
+
+    width: 280px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    transition: transform 0.3s ease;
+}
+
+
+.song-main-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.song-small-image {
+    position: absolute;
+
+    width: 90px;
+
+    z-index: 1;
+}
+
+
+.song-small-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+.song-small-one {
+    left: 10px;
+    top: 20px;
+
+    transform: rotate(-10deg);
+}
+
+
+.song-small-two {
+    right: 10px;
+    bottom: 20px;
+
+    transform: rotate(10deg);
+}
+
+
+.song-status {
+    margin-top: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--text-soft);
+}
+
+
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+
+.final-content {
+    max-width: 650px;
+}
+
+
+.birthday-title {
+    margin-bottom: 5px;
+}
+
+
+.birthday-message {
+    color: var(--text-soft);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.2rem;
+}
+
+
+.final-main-image {
+    width: min(420px, 85vw);
+
+    margin: 25px auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.final-main-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+.final-small-image {
+    position: absolute;
+
+    width: 100px;
+
+    z-index: 3;
+}
+
+
+.final-small-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+.final-small-one {
+    left: 7%;
+    top: 35%;
+
+    transform: rotate(-10deg);
+}
+
+
+.final-small-two {
+    right: 7%;
+    bottom: 28%;
+
+    transform: rotate(10deg);
+}
+
+
+.love-message {
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.3rem;
+}
+
+
+.signature {
+    margin-top: 5px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.4rem;
+
+    color: var(--pink-dark);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 35px 14px;
+    }
+
+
+    .number-button {
+        width: 64px;
+        height: 64px;
+    }
+
+
+    .envelope-scene {
+        height: 330px;
+    }
+
+
+    .envelope-choice-left,
+    .envelope-choice-right {
+        width: 88px;
+        height: 125px;
+    }
+
+
+    .envelope-choice-center {
+        width: 100px;
+        height: 140px;
+    }
+
+
+    .flower-memory-layout {
+        gap: 8px;
+    }
+
+
+    .bouquet-image {
+        width: 170px;
+    }
+
+
+    .photo-strip {
+        width: 75px;
+    }
+
+
+    .strip-photo img {
+        height: 65px;
+    }
+
+
+    .song-area {
+        height: 300px;
+    }
+
+
+    .song-main-image {
+        width: 230px;
+    }
+
+
+    .song-small-image {
+        width: 70px;
+    }
+
+
+    .final-small-image {
+        width: 75px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .flower-memory-layout {
+        gap: 5px;
+    }
+
+
+    .bouquet-image {
+        width: 145px;
+    }
+
+
+    .photo-strip {
+        width: 65px;
+    }
+
+
+    .strip-photo {
+        padding: 4px;
+    }
+
+
+    .strip-photo img {
+        height: 55px;
+    }
+
+}
