@@ -116,8 +116,6 @@
 
 </main>
 
-
-
 <!-- =====================================================
      WRONG PASSWORD POPUP
 ===================================================== -->
@@ -126,43 +124,56 @@
 
     <div class="error-popup">
 
-        <button id="closeErrorButton" class="close-popup">
-            ×
-        </button>
+        <div class="error-header">
 
-        <h2>
-            Error
-        </h2>
+            <h2>Error</h2>
 
-        <img
-            src="images/error-image.png"
-            alt="Error"
-            class="error-image"
-        >
+            <img
+                src="images/error-image.png"
+                alt="Error"
+                class="error-icon"
+            >
 
-        <p>
-            You entered the wrong password
-        </p>
+            <button id="closeErrorButton" class="close-popup">
+                ×
+            </button>
 
-        <div class="popup-line"></div>
+        </div>
 
-        <img
-            src="images/hint-image.png"
-            alt="Try again"
-            class="error-second-image"
-        >
 
         <div class="popup-line"></div>
 
-        <button id="tryAgainButton" class="cute-button">
-            Try again
-        </button>
+
+        <div class="error-content">
+
+            <div class="error-text">
+                <p>Oops!</p>
+                <p>Wrong password</p>
+            </div>
+
+            <img
+                src="images/hint-image.png"
+                alt="Wrong password"
+                class="error-second-image"
+            >
+
+        </div>
+
+
+        <div class="popup-line"></div>
+
+
+        <div class="error-footer">
+
+            <button id="tryAgainButton" class="cute-button">
+                Try Again
+            </button>
+
+        </div>
 
     </div>
 
 </div>
-
-
 
 <!-- =====================================================
      PAGE 2 — CLOSED ENVELOPE
