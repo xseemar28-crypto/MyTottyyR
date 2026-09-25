@@ -16,6 +16,9 @@ const pages = {
     letterPage:
         document.getElementById("letterPage"),
 
+    messagePage:
+        document.getElementById("messagePage"),
+
     flowerPage:
         document.getElementById("flowerPage"),
 
